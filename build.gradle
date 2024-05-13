@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // TestNG dependency
+    implementation 'org.testng:testng:7.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // Rest Assured dependency
+    implementation 'io.rest-assured:rest-assured:4.4.0'
+    implementation 'io.rest-assured:json-schema-validator:4.4.0' // If you need JSON Schema validation
+
+    // lombok dependency
+    implementation 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // JsonPath dependency
+    implementation 'com.jayway.jsonpath:json-path:2.6.0'
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+
+
+test {
+
+    useTestNG() // Tells Gradle to use TestNG for running tests
+    useJUnitPlatform() //This method tells Gradle to use JUnit Platform for executing tests.
+
+}
